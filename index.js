@@ -1,6 +1,6 @@
 import { createRequire } from 'node:module'
-
-const addon = createRequire(import.meta.url)('./build/Release/xattr')
+/* global process __filename Buffer */
+const addon = createRequire(`file://${process.cwd()}/npm${__filename}`)('./build/Release/xattr');
 
 function validateArgument (key, val) {
   switch (key) {
